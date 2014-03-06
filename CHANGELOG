@@ -1,0 +1,46 @@
+﻿[Trial 5 (1st March, 2014)] [FAILED]
+Agenda: Implement wxButton.
+
+1. I am using Arch Linux on which I build my project and it works very well but when I tried to build it on Ubuntu, it farted. So I fixed the build script writen in python which worked but I still haven't tested it on Arch Linux. Hope it works. I am at college BTW not at home.
+2. Continuing with the current coding style, I tried implementing wxButton. It compiled without any errors but again Java as usual didn't like my code. Why is it so moody??
+3. Still investigating why the code is not working.
+4. I also realised Java doesn't support multiple inheritance. How could I forget that? >:(
+
+
+[Trial 4 (27th February, 2014)] [SUCCESS]
+Agenda: Recode everything with proper programming.
+
+1. Recoded everything again keeping code cleanliness in mind.
+2. Created two classes i.e. wxApp and wxFrame in Java which inherited their respective C++ classes.
+3. Partially implemented enums and constants required by wxFrame.
+4. Implemented only two function of wxFrame i.e. Center() and 
+Center(int direction).
+5. Started documenting the code changes. As you can see there three trials without any dates. I am kinda lazy to do this stuff.
+
+Verdict: The code worked. Continuing with current coding style.
+
+[Trial 3 (Date unknown)] [PARTIAL SUCCESS]
+Agenda: To fix the interface file and bind wxWidgets to Java again.
+
+1. Recoded everything. It compiled without any errors or warnings and it worked. Technical details:
+Classes implemented were wxApp and wxFrame. 
+All virtual function overloading was handled on the C++ side.
+Java only called the start function which inturn executed the C++ code.
+2. The coding style was horrible so I ditched the project again. Another reason why I ditched it was because all the virtual function overloading was implemented in C++ which was supposed to be done in Java and the current coding methodology did not allow it to be done.
+
+Verdict: Abandoned project build because of horrible coding style.
+	
+[Trial 2 (Date unknown)] [FAILED]
+Agenda: To create wxWidgets bindings for Java.
+
+1. Recoded everything. It compiled without any errors or warnings but Java caught an fault outside the JVM, probably a segmentation fault. 
+2. The structure of the SWIG interface file was flawed. My mistake.
+
+Verdict: Abandoned build style.
+
+[Trial 1 (Date unknown)] [FAILED]
+Agenda: To create wxWidgets bindings for Java.
+
+1. First implementation of the project. It was an utter failure. But that was expected.
+
+Verdict: Abandoned project build.
