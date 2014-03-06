@@ -19,6 +19,7 @@ Its fairly simple. The following three components are used:
 wxWidgets uses native libraries which can be used to make GUIs through C++. First, a wrapper library is created around the existing wxWidgets library. Then, using SWIG a Java wrapper is generated which can use the wrapper library. Once the Java wrapper is ready, pure Java classes and functions are made manually which call the native functions. 
 
 <h1>Progress Report</h1>
+<center><img src="screenshots/frame.jpeg"/></center>
 This project is still in very early stage. For now (dated 6th of March, 2014) only the following components have been implemented:
 <ul>
 <li><b>wxApp</b> [PARTIALLY IMPLEMENTED]</li>
