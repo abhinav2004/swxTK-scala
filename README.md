@@ -4,7 +4,7 @@ swxTK is simple to use GUI toolkit for Java. It tries to use the same syntax as 
 </p>
 
 <p>
-To know more about wxWidgets, please visit <a href="http://www.wxwidgets.com">http://www.wxwidgets.com</a>
+To know more about wxWidgets, please visit <a href="http://www.wxwidgets.org">http://www.wxwidgets.org</a>
 </p>
 
 <h1>How does swxTK work?</h1>
