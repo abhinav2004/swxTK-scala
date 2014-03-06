@@ -16,10 +16,23 @@ Its fairly simple. The following three components are used:
 </ul>
 
 <h5>The working:</h5>
-wxWidgets uses native libraries which can be used to make GUIs through C++. First, a wrapper library is created around the existing wxWidgets library. Then, using SWIG a Java wrapper is generated which can use the wrapper library. Once the Java wrapper is ready, pure Java functions and Class is made manually which call the native functions. 
+wxWidgets uses native libraries which can be used to make GUIs through C++. First, a wrapper library is created around the existing wxWidgets library. Then, using SWIG a Java wrapper is generated which can use the wrapper library. Once the Java wrapper is ready, pure Java classes and functions are made manually which call the native functions. 
 
 <h1>Progress Report</h1>
-
+This project is still in very early stage. For now (dated 6th of March, 2014) only the following components have been implemented:
 <ul>
-<li></li>
+<li><b>wxApp</b> [PARTIALLY IMPLEMENTED]</li>
+→ The current implementation works and the app runs. More functions will be added.<br /><br />
+<li><b>wxFrame</b> [PARTIALLY IMPLEMENTED]</li>
+→ wxFrame constants [IMPLEMENTED]<br />
+→ Does not inherit wxWindow on the Java side [WIP]<br />
+→ Resizing the window programmatically [TODO]<br /><br />
+
+<li><b>wxButton</b> [PARTIALLY IMPLEMENTED]</li>
+→ Event Handling [DONE]<br /><br />
+<li><b>wxMenuBar, wxMenu, wxMenuItem</b> [WIP]</li>
+→ Event Handling [BROKEN, WIP]<br />
+  <br /><br />
+
+
 </ul>
