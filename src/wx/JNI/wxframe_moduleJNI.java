@@ -16,9 +16,10 @@ public class wxframe_moduleJNI {
   public final static native long new_java_wxmenu__SWIG_1(String jarg1, int jarg2);
   public final static native void java_wxmenu_java_Append__SWIG_0(long jarg1, java_wxmenu jarg1_, int jarg2, String jarg3);
   public final static native void java_wxmenu_java_Append__SWIG_1(long jarg1, java_wxmenu jarg1_, long jarg2, java_wxmenuitem jarg2_);
+  public final static native void java_wxmenu_java_Bind(long jarg1, java_wxmenu jarg1_, long jarg2, java_wxmenuitem jarg2_);
   public final static native void delete_java_wxmenu(long jarg1);
   public final static native long new_java_wxmenuitem(long jarg1, java_wxmenu jarg1_, int jarg2, String jarg3);
-  public final static native void java_wxmenuitem_OnClick(long jarg1, java_wxmenuitem jarg1_, long jarg2, java_wxmenuitem jarg2_);
+  public final static native void java_wxmenuitem_OnClick(long jarg1, java_wxmenuitem jarg1_);
   public final static native void java_wxmenuitem_click_event_occured(long jarg1, java_wxmenuitem jarg1_, long jarg2);
   public final static native void delete_java_wxmenuitem(long jarg1);
   public final static native long new_java_wxframe(long jarg1, java_wxframe jarg1_, int jarg2, String jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, String jarg9);

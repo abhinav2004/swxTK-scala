@@ -97,12 +97,31 @@ def build_wxMenuBar():
 	print (JAVAC + " -cp ./src src/wx/wxMenuItem.java")
 	os.system("\t"+JAVAC + " -cp ./src src/wx/wxMenuItem.java")
 	print ("")
+	
+def build_wxDialog():
+	print ("\033[1;31mWARNING!!!!! wxDialog code is not complete. WIP!!\033[0m");
+	# Building wxDialogfor java
+	print ("\033[1;37mBuilding wxDialog.\033[0m")
+	print ("")
+	print ("\033[1;37m--> Generating interface files\033[0m")
+	print ("\t"+SWIG + "-package wx.JNI -outdir src/wx/JNI src/wxdialog_module.i")
+	os.system(SWIG + "-package wx.JNI -outdir src/wx/JNI src/wxdialog_module.i")
+	print ("")
+	print ("\033[1;37m--> Compiling C++ source code.\033[0m")
+	print ("\t"+GPP + "src/wxdialog_module_wrap.cxx src/java_wxdialog.cpp -o ./build/natives/libwxdialog.so")
+	os.system(GPP + "src/wxdialog_module_wrap.cxx src/java_wxdialog.cpp -o ./build/natives/libwxdialog.so")
+	print ("")
+	print ("\033[1;37m--> Generating wxDialog java class.\033[0m")
+	print (JAVAC + " -cp ./src/wxDialog src/wx/wxDialog.java")
+	os.system("\t"+JAVAC + " -cp ./src src/wx/wxDialog.java")
+	print ("")
 
 def main(args):
 	if len(args) == 0:
 		build_wxApp()
 		build_wxButton()
 		build_wxPanel()
+		build_wxDialog()
 		build_wxFrame()
 		build_wxMenuBar()
 	elif any("wxApp" in s for s in args):
@@ -115,10 +134,13 @@ def main(args):
 		build_wxPanel()
 	elif any("wxMenuBar" in s for s in args):
 		build_wxMenuBar()
+	elif any("wxDialog" in s for s in args):
+		build_wxDialog()
 	else:
 		build_wxApp()
 		build_wxButton()
 		build_wxPanel()
+		build_wxDialog()
 		build_wxFrame()
 		build_wxMenuBar()
 
