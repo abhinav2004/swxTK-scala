@@ -11,7 +11,8 @@ class myApp extends wxApp implements ActionListener
 	private wxButton button1;
 	private wxButton button2;
 	private wxMenuBar menubar;
-	private wxMenu menu;
+	private wxMenu fileMenu;
+	private wxMenu helpMenu;
 	private wxMenuItem menuitem1;
 	private wxMenuItem menuitem2;
 	private wxMenuItem menuitem3;
@@ -36,17 +37,19 @@ class myApp extends wxApp implements ActionListener
 		System.out.println(button2.toString());
 		
 		menubar = new wxMenuBar();
-		menu = new wxMenu();
-		menuitem1 = new wxMenuItem(menu, -1, "&New\tCtrl+N");
+		fileMenu = new wxMenu();
+		helpMenu = new wxMenu();
+		menuitem1 = new wxMenuItem(fileMenu, -1, "&New\tCtrl+N");
 		menuitem1.addActionListener(this);
-		menuitem2 = new wxMenuItem(menu, -1, "&Open\tCtrl+O");
+		menuitem2 = new wxMenuItem(fileMenu, -1, "&Open\tCtrl+O");
 		menuitem2.addActionListener(this);
-		menuitem3 = new wxMenuItem(menu, -1, "&Exit\tCtrl+Q");
+		menuitem3 = new wxMenuItem(fileMenu, -1, "&Exit\tCtrl+Q");
 		menuitem3.addActionListener(this);
-		menu.append(menuitem1);
-		menu.append(menuitem2);
-		menu.append(menuitem3);
-		menubar.append(menu, "&File");
+		fileMenu.append(menuitem1);
+		fileMenu.append(menuitem2);
+		fileMenu.append(menuitem3);
+		menubar.append(fileMenu, "&File");
+		menubar.append(helpMenu, "&Help");
 		
 		frame.setMenuBar(menubar);
 		
