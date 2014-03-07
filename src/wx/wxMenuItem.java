@@ -23,8 +23,8 @@ public class wxMenuItem extends java_wxmenuitem {
 	}
 	
 	@Override
-	public void OnClick(java_wxmenuitem eventSource)
+	public void OnClick()
 	{
-		listener.actionPerformed(new ActionEvent((wxMenuItem)eventSource, (int) AWTEvent.ACTION_EVENT_MASK, "OnClick"));
+		listener.actionPerformed(new ActionEvent(this, (int) AWTEvent.ACTION_EVENT_MASK, "OnClick"));
 	}
 }

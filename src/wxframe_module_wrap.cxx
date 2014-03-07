@@ -378,14 +378,17 @@ SWIGEXPORT jlong JNICALL Java_wx_JNI_wxframe_1moduleJNI_new_1java_1wxmenuitem(JN
 }
 
 
-SWIGEXPORT void JNICALL Java_wx_JNI_wxframe_1moduleJNI_java_1wxmenuitem_1OnClick(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_wx_JNI_wxframe_1moduleJNI_java_1wxmenuitem_1OnClick(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   java_wxmenuitem *arg1 = (java_wxmenuitem *) 0 ;
+  java_wxmenuitem *arg2 = (java_wxmenuitem *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(java_wxmenuitem **)&jarg1; 
-  (arg1)->OnClick();
+  arg2 = *(java_wxmenuitem **)&jarg2; 
+  (arg1)->OnClick(arg2);
 }
 
 

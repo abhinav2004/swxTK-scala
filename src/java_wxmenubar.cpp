@@ -28,13 +28,18 @@ void java_wxmenu::java_Append(java_wxmenuitem* menuitem)
 	this->Append(menuitem);
 }
 
+void java_wxmenu::java_Bind(java_wxmenuitem *menuitem)
+{
+	this->Bind(wxEVT_COMMAND_MENU_SELECTED, &java_wxmenuitem::click_event_occured, menuitem);
+}
+
 /* 
  * wxMenuItem and member functions 
  */
 
 void java_CallOnClick(java_wxmenuitem* director)
 {
-	director->OnClick(director);
+	director->OnClick();
 }
 
 java_wxmenuitem::java_wxmenuitem(java_wxmenu* menu, int id, std::string name) : wxMenuItem(menu, id, wxString::FromUTF8(name.c_str())) 
@@ -43,11 +48,15 @@ java_wxmenuitem::java_wxmenuitem(java_wxmenu* menu, int id, std::string name) : 
 	std::cout << "Created object: " << this << std::endl;
 	std::cout << "Parent object: " << parent_menu << std::endl;
 	std::cout << "Function: " << &java_wxmenuitem::click_event_occured << std::endl;
-	parent_menu->Bind(wxEVT_COMMAND_MENU_SELECTED, &java_wxmenuitem::click_event_occured, this);
+	int ID = wxNewId();
+	std::cout << "Assigned ID: " << ID << std::endl;
+	menu->Bind(wxEVT_COMMAND_MENU_SELECTED, &java_wxmenuitem::click_event_occured, this);
 }
 
 void java_wxmenuitem::click_event_occured(wxCommandEvent& event)
 {
-	std::cout << "Event occured at: " << this << std::endl;
-	java_CallOnClick(this);
+	if(this->GetId() == event.GetId())
+		java_CallOnClick(this);
+	else
+		event.Skip();
 }

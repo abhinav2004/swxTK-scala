@@ -16,17 +16,18 @@ public class wxmenubar_moduleJNI {
   public final static native long new_java_wxmenu__SWIG_1(String jarg1, int jarg2);
   public final static native void java_wxmenu_java_Append__SWIG_0(long jarg1, java_wxmenu jarg1_, int jarg2, String jarg3);
   public final static native void java_wxmenu_java_Append__SWIG_1(long jarg1, java_wxmenu jarg1_, long jarg2, java_wxmenuitem jarg2_);
+  public final static native void java_wxmenu_java_Bind(long jarg1, java_wxmenu jarg1_, long jarg2, java_wxmenuitem jarg2_);
   public final static native void delete_java_wxmenu(long jarg1);
   public final static native long new_java_wxmenuitem(long jarg1, java_wxmenu jarg1_, int jarg2, String jarg3);
-  public final static native void java_wxmenuitem_OnClick(long jarg1, java_wxmenuitem jarg1_, long jarg2, java_wxmenuitem jarg2_);
-  public final static native void java_wxmenuitem_OnClickSwigExplicitjava_wxmenuitem(long jarg1, java_wxmenuitem jarg1_, long jarg2, java_wxmenuitem jarg2_);
+  public final static native void java_wxmenuitem_OnClick(long jarg1, java_wxmenuitem jarg1_);
+  public final static native void java_wxmenuitem_OnClickSwigExplicitjava_wxmenuitem(long jarg1, java_wxmenuitem jarg1_);
   public final static native void java_wxmenuitem_click_event_occured(long jarg1, java_wxmenuitem jarg1_, long jarg2);
   public final static native void delete_java_wxmenuitem(long jarg1);
   public final static native void java_wxmenuitem_director_connect(java_wxmenuitem obj, long cptr, boolean mem_own, boolean weak_global);
   public final static native void java_wxmenuitem_change_ownership(java_wxmenuitem obj, long cptr, boolean take_or_release);
 
-  public static void SwigDirector_java_wxmenuitem_OnClick(java_wxmenuitem self, long director) {
-    self.OnClick((director == 0) ? null : new java_wxmenuitem(director, false));
+  public static void SwigDirector_java_wxmenuitem_OnClick(java_wxmenuitem self) {
+    self.OnClick();
   }
 
   private final static native void swig_module_init();

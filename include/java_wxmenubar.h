@@ -18,12 +18,13 @@ public:
 	java_wxmenu(std::string name, long style);
 	void java_Append(int id, std::string name);
 	void java_Append(java_wxmenuitem *menuitem);
+	void java_Bind(java_wxmenuitem *menuitem);
 };
 
 class java_wxmenuitem : public wxMenuItem {
 public:
 	java_wxmenuitem(java_wxmenu* menu, int id, std::string name);
-	virtual void OnClick(java_wxmenuitem* director) {}
+	virtual void OnClick() {}
 	void click_event_occured(wxCommandEvent& event);
 	virtual ~java_wxmenuitem() {}
 };

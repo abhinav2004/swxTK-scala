@@ -433,20 +433,18 @@ namespace Swig {
 SwigDirector_java_wxmenuitem::SwigDirector_java_wxmenuitem(JNIEnv *jenv, java_wxmenu *menu, int id, std::string name) : java_wxmenuitem(menu, id, name), Swig::Director(jenv) {
 }
 
-void SwigDirector_java_wxmenuitem::OnClick(java_wxmenuitem *director) {
+void SwigDirector_java_wxmenuitem::OnClick() {
   JNIEnvWrapper swigjnienv(this) ;
   JNIEnv * jenv = swigjnienv.getJNIEnv() ;
   jobject swigjobj = (jobject) NULL ;
-  jlong jdirector = 0 ;
   
   if (!swig_override[0]) {
-    java_wxmenuitem::OnClick(director);
+    java_wxmenuitem::OnClick();
     return;
   }
   swigjobj = swig_get_self(jenv);
   if (swigjobj && jenv->IsSameObject(swigjobj, NULL) == JNI_FALSE) {
-    *((java_wxmenuitem **)&jdirector) = (java_wxmenuitem *) director; 
-    jenv->CallStaticVoidMethod(Swig::jclass_wxmenubar_moduleJNI, Swig::director_methids[0], swigjobj, jdirector);
+    jenv->CallStaticVoidMethod(Swig::jclass_wxmenubar_moduleJNI, Swig::director_methids[0], swigjobj);
     if (jenv->ExceptionCheck() == JNI_TRUE) return ;
   } else {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null upcall object");
@@ -466,7 +464,7 @@ void SwigDirector_java_wxmenuitem::swig_connect_director(JNIEnv *jenv, jobject j
     jmethodID base_methid;
   } methods[] = {
     {
-      "OnClick", "(Lwx/JNI/java_wxmenuitem;)V", NULL 
+      "OnClick", "()V", NULL 
     }
   };
   
@@ -620,6 +618,20 @@ SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenu_1java_1App
 }
 
 
+SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenu_1java_1Bind(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  java_wxmenu *arg1 = (java_wxmenu *) 0 ;
+  java_wxmenuitem *arg2 = (java_wxmenuitem *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(java_wxmenu **)&jarg1; 
+  arg2 = *(java_wxmenuitem **)&jarg2; 
+  (arg1)->java_Bind(arg2);
+}
+
+
 SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_delete_1java_1wxmenu(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   java_wxmenu *arg1 = (java_wxmenu *) 0 ;
   
@@ -656,31 +668,25 @@ SWIGEXPORT jlong JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_new_1java_1wxmenuitem(
 }
 
 
-SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenuitem_1OnClick(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenuitem_1OnClick(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   java_wxmenuitem *arg1 = (java_wxmenuitem *) 0 ;
-  java_wxmenuitem *arg2 = (java_wxmenuitem *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
-  (void)jarg2_;
   arg1 = *(java_wxmenuitem **)&jarg1; 
-  arg2 = *(java_wxmenuitem **)&jarg2; 
-  (arg1)->OnClick(arg2);
+  (arg1)->OnClick();
 }
 
 
-SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenuitem_1OnClickSwigExplicitjava_1wxmenuitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_java_1wxmenuitem_1OnClickSwigExplicitjava_1wxmenuitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   java_wxmenuitem *arg1 = (java_wxmenuitem *) 0 ;
-  java_wxmenuitem *arg2 = (java_wxmenuitem *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
-  (void)jarg2_;
   arg1 = *(java_wxmenuitem **)&jarg1; 
-  arg2 = *(java_wxmenuitem **)&jarg2; 
-  (arg1)->java_wxmenuitem::OnClick(arg2);
+  (arg1)->java_wxmenuitem::OnClick();
 }
 
 
@@ -739,7 +745,7 @@ SWIGEXPORT void JNICALL Java_wx_JNI_wxmenubar_1moduleJNI_swig_1module_1init(JNIE
     const char *signature;
   } methods[1] = {
     {
-      "SwigDirector_java_wxmenuitem_OnClick", "(Lwx/JNI/java_wxmenuitem;J)V" 
+      "SwigDirector_java_wxmenuitem_OnClick", "(Lwx/JNI/java_wxmenuitem;)V" 
     }
   };
   Swig::jclass_wxmenubar_moduleJNI = (jclass) jenv->NewGlobalRef(jcls);

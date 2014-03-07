@@ -8,37 +8,17 @@
 
 package wx.JNI;
 
-import java.util.HashMap;
-import java.lang.ref.WeakReference;
-
 public class java_wxmenuitem {
-  private static HashMap<Long, WeakReference<java_wxmenuitem>> instances 
-                        = new HashMap<Long, WeakReference<java_wxmenuitem>>();
-
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  public java_wxmenuitem(long cPtr, boolean cMemoryOwn) {
+  protected java_wxmenuitem(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
-    // If derived add it.
-    if (getClass() != java_wxmenuitem.class) {
-      instances.put(swigCPtr, new WeakReference<java_wxmenuitem>(this));
-    }
   }
 
-  // Just the default one
-  public static long getCPtr(java_wxmenuitem obj) {
+  protected static long getCPtr(java_wxmenuitem obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
-  }
-
-  // Helper function that looks up given a pointer and 
-  // either creates or returns it
-  static java_wxmenuitem createOrLookup(long arg) {
-    if (instances.containsKey(arg)) {
-      return instances.get(arg).get();
-    }
-    return new java_wxmenuitem(arg,false);
   }
 
   protected void finalize() {
@@ -46,16 +26,14 @@ public class java_wxmenuitem {
   }
 
   public synchronized void delete() {
-  if (swigCPtr != 0) {
-    // Unregister instance
-    instances.remove(swigCPtr);
-    if (swigCMemOwn) {
-      swigCMemOwn = false;
-      wxmenubar_moduleJNI.delete_java_wxmenuitem(swigCPtr);
+    if (swigCPtr != 0) {
+      if (swigCMemOwn) {
+        swigCMemOwn = false;
+        wxmenubar_moduleJNI.delete_java_wxmenuitem(swigCPtr);
+      }
+      swigCPtr = 0;
     }
-    swigCPtr = 0;
   }
-}
 
   protected void swigDirectorDisconnect() {
     swigCMemOwn = false;
@@ -77,8 +55,8 @@ public class java_wxmenuitem {
     wxmenubar_moduleJNI.java_wxmenuitem_director_connect(this, swigCPtr, swigCMemOwn, true);
   }
 
-  public void OnClick(java_wxmenuitem director) {
-    if (getClass() == java_wxmenuitem.class) wxmenubar_moduleJNI.java_wxmenuitem_OnClick(swigCPtr, this, java_wxmenuitem.getCPtr(director), director); else wxmenubar_moduleJNI.java_wxmenuitem_OnClickSwigExplicitjava_wxmenuitem(swigCPtr, this, java_wxmenuitem.getCPtr(director), director);
+  public void OnClick() {
+    if (getClass() == java_wxmenuitem.class) wxmenubar_moduleJNI.java_wxmenuitem_OnClick(swigCPtr, this); else wxmenubar_moduleJNI.java_wxmenuitem_OnClickSwigExplicitjava_wxmenuitem(swigCPtr, this);
   }
 
   public void click_event_occured(SWIGTYPE_p_wxCommandEvent event) {

@@ -51,4 +51,8 @@ public class java_wxmenu {
     wxmenubar_moduleJNI.java_wxmenu_java_Append__SWIG_1(swigCPtr, this, java_wxmenuitem.getCPtr(menuitem), menuitem);
   }
 
+  public void java_Bind(java_wxmenuitem menuitem) {
+    wxmenubar_moduleJNI.java_wxmenu_java_Bind(swigCPtr, this, java_wxmenuitem.getCPtr(menuitem), menuitem);
+  }
+
 }

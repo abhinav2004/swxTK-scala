@@ -16,7 +16,7 @@ class SwigDirector_java_wxmenuitem : public java_wxmenuitem, public Swig::Direct
 public:
     void swig_connect_director(JNIEnv *jenv, jobject jself, jclass jcls, bool swig_mem_own, bool weak_global);
     SwigDirector_java_wxmenuitem(JNIEnv *jenv, java_wxmenu *menu, int id, std::string name);
-    virtual void OnClick(java_wxmenuitem *director);
+    virtual void OnClick();
     virtual ~SwigDirector_java_wxmenuitem();
 public:
     bool swig_overrides(int n) {

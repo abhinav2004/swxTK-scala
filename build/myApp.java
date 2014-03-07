@@ -36,10 +36,12 @@ class myApp extends wxApp implements ActionListener
 		
 		menubar = new wxMenuBar();
 		menu = new wxMenu();
-		menuitem2 = new wxMenuItem(menu, 1, "&Exit\tCtrl+Q");
-		menuitem2.addActionListener(this);
 		menuitem1 = new wxMenuItem(menu, 0, "&New\tCtrl+N");
 		menuitem1.addActionListener(this);
+		menuitem2 = new wxMenuItem(menu, 1, "&Open\tCtrl+Q");
+		menuitem2.addActionListener(this);
+		menuitem3 = new wxMenuItem(menu, 2, "&Exit\tCtrl+Q");
+		menuitem4.addActionListener(this);
 		menu.append(menuitem1);
 		menu.append(menuitem2);
 		menubar.append(menu, "&File");
