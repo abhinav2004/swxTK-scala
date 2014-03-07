@@ -44,12 +44,6 @@ void java_CallOnClick(java_wxmenuitem* director)
 
 java_wxmenuitem::java_wxmenuitem(java_wxmenu* menu, int id, std::string name) : wxMenuItem(menu, id, wxString::FromUTF8(name.c_str())) 
 {
-	wxMenu* parent_menu = GetMenu();
-	std::cout << "Created object: " << this << std::endl;
-	std::cout << "Parent object: " << parent_menu << std::endl;
-	std::cout << "Function: " << &java_wxmenuitem::click_event_occured << std::endl;
-	int ID = wxNewId();
-	std::cout << "Assigned ID: " << ID << std::endl;
 	menu->Bind(wxEVT_COMMAND_MENU_SELECTED, &java_wxmenuitem::click_event_occured, this);
 }
 

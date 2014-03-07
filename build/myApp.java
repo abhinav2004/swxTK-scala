@@ -14,6 +14,7 @@ class myApp extends wxApp implements ActionListener
 	private wxMenu menu;
 	private wxMenuItem menuitem1;
 	private wxMenuItem menuitem2;
+	private wxMenuItem menuitem3;
 	
 	String args[];
 
@@ -36,14 +37,15 @@ class myApp extends wxApp implements ActionListener
 		
 		menubar = new wxMenuBar();
 		menu = new wxMenu();
-		menuitem1 = new wxMenuItem(menu, 0, "&New\tCtrl+N");
+		menuitem1 = new wxMenuItem(menu, -1, "&New\tCtrl+N");
 		menuitem1.addActionListener(this);
-		menuitem2 = new wxMenuItem(menu, 1, "&Open\tCtrl+Q");
+		menuitem2 = new wxMenuItem(menu, -1, "&Open\tCtrl+O");
 		menuitem2.addActionListener(this);
-		menuitem3 = new wxMenuItem(menu, 2, "&Exit\tCtrl+Q");
-		menuitem4.addActionListener(this);
+		menuitem3 = new wxMenuItem(menu, -1, "&Exit\tCtrl+Q");
+		menuitem3.addActionListener(this);
 		menu.append(menuitem1);
 		menu.append(menuitem2);
+		menu.append(menuitem3);
 		menubar.append(menu, "&File");
 		
 		frame.setMenuBar(menubar);
@@ -75,6 +77,9 @@ class myApp extends wxApp implements ActionListener
 			internalframe.show(true);
 		}
 		else if(event.getSource() == menuitem2) {
+			System.out.println("Opening file!");
+		}
+		else if(event.getSource() == menuitem3) {
 			System.exit(0);
 		}
 	}
