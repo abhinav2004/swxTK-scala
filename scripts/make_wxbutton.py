@@ -4,7 +4,7 @@ import subprocess
 
 JAVA_HOME = os.environ['JAVA_HOME']
 CXX = "g++"
-CXXOP = " -c -shared -fPIC `wx-config --cppflags` `wx-config --libs` -L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
+CXXOP = " -pipe -c -shared -fPIC `wx-config --cppflags` `wx-config --libs` -L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
 SWIG = "swig -c++ -java "
 JAVAC = "javac -d ./build/ "
 
