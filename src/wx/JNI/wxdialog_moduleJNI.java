@@ -15,7 +15,7 @@ public class wxdialog_moduleJNI {
   public final static native void java_wxframe_java_Center__SWIG_1(long jarg1, java_wxframe jarg1_, int jarg2);
   public final static native void java_wxframe_java_SetMenuBar(long jarg1, java_wxframe jarg1_, long jarg2);
   public final static native void delete_java_wxframe(long jarg1);
-  public final static native long new_java_wxdialog(long jarg1, java_wxframe jarg1_, int jarg2, String jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, String jarg9);
+  public final static native long new_java_wxdialog(long jarg1, int jarg2, String jarg3, int jarg4, int jarg5, int jarg6, int jarg7, int jarg8, String jarg9);
   public final static native void java_wxdialog_java_ShowModal(long jarg1, java_wxdialog jarg1_);
   public final static native void java_wxdialog_java_Show(long jarg1, java_wxdialog jarg1_);
   public final static native void java_wxdialog_java_Center__SWIG_0(long jarg1, java_wxdialog jarg1_);

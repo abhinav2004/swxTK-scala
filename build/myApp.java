@@ -8,6 +8,8 @@ class myApp extends wxApp implements ActionListener
 	private wxFrame frame;
 	private wxFrame internalframe;
 	
+	private wxDialog dialog;
+	
 	private wxButton button1;
 	private wxButton button2;
 	private wxMenuBar menubar;
@@ -16,6 +18,7 @@ class myApp extends wxApp implements ActionListener
 	private wxMenuItem menuitem1;
 	private wxMenuItem menuitem2;
 	private wxMenuItem menuitem3;
+	private wxMenuItem about;
 	
 	String args[];
 
@@ -23,8 +26,9 @@ class myApp extends wxApp implements ActionListener
 	public boolean onInit() {
 		frame = new wxFrame(null, -1, "This is a Frame", new Point(0,0), new Dimension(800,600), wxFrame.wxDEFAULT_FRAME_STYLE, "mainFrame");
 		
-		
 		wxPanel panel = new wxPanel(frame, -1);
+		
+		dialog = new wxDialog(panel, -1, "About");
 		
 		button1 = new wxButton(panel, 0, "Button 1", new Point(10,10), new Dimension(100,32), 1, "button");
 		button1.addActionListener(this);
@@ -45,6 +49,8 @@ class myApp extends wxApp implements ActionListener
 		menuitem2.addActionListener(this);
 		menuitem3 = new wxMenuItem(fileMenu, -1, "&Exit\tCtrl+Q");
 		menuitem3.addActionListener(this);
+		about = new wxMenuItem(helpMenu, -1, "&Exit\tCtrl+Q");
+		about.addActionListener(this);
 		fileMenu.append(menuitem1);
 		fileMenu.append(menuitem2);
 		fileMenu.append(menuitem3);
@@ -84,6 +90,9 @@ class myApp extends wxApp implements ActionListener
 		}
 		else if(event.getSource() == menuitem3) {
 			System.exit(0);
+		}
+		else if(event.getSource() == about) {
+			dialog.ShowModal();
 		}
 	}
 }

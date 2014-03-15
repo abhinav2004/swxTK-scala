@@ -29,30 +29,30 @@ public class java_wxframe {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        wxframe_moduleJNI.delete_java_wxframe(swigCPtr);
+        wxdialog_moduleJNI.delete_java_wxframe(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public java_wxframe(java_wxframe parent, int id, String title, int x, int y, int width, int height, int style, String name) {
-    this(wxframe_moduleJNI.new_java_wxframe(java_wxframe.getCPtr(parent), parent, id, title, x, y, width, height, style, name), true);
+    this(wxdialog_moduleJNI.new_java_wxframe(java_wxframe.getCPtr(parent), parent, id, title, x, y, width, height, style, name), true);
   }
 
   public void java_Show(boolean val) {
-    wxframe_moduleJNI.java_wxframe_java_Show(swigCPtr, this, val);
+    wxdialog_moduleJNI.java_wxframe_java_Show(swigCPtr, this, val);
   }
 
   public void java_Center() {
-    wxframe_moduleJNI.java_wxframe_java_Center__SWIG_0(swigCPtr, this);
+    wxdialog_moduleJNI.java_wxframe_java_Center__SWIG_0(swigCPtr, this);
   }
 
   public void java_Center(int direction) {
-    wxframe_moduleJNI.java_wxframe_java_Center__SWIG_1(swigCPtr, this, direction);
+    wxdialog_moduleJNI.java_wxframe_java_Center__SWIG_1(swigCPtr, this, direction);
   }
 
-  public void java_SetMenuBar(java_wxmenubar menubar) {
-    wxframe_moduleJNI.java_wxframe_java_SetMenuBar(swigCPtr, this, java_wxmenubar.getCPtr(menubar), menubar);
+  public void java_SetMenuBar(SWIGTYPE_p_java_wxmenubar menubar) {
+    wxdialog_moduleJNI.java_wxframe_java_SetMenuBar(swigCPtr, this, SWIGTYPE_p_java_wxmenubar.getCPtr(menubar));
   }
 
 }

@@ -7,6 +7,7 @@ from scripts import make_wxframe as wxFrame
 from scripts import make_wxpanel as wxPanel
 from scripts import make_wxbutton as wxButton
 from scripts import make_wxmenubar as wxMenuBar
+from scripts import make_wxdialog as wxDialog
 
 def main(args):
 	if(len(args) is not 1):

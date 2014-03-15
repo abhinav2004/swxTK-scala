@@ -327,9 +327,9 @@ SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_delete_1java_1wxframe(JN
 }
 
 
-SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6, jint jarg7, jint jarg8, jstring jarg9) {
+SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6, jint jarg7, jint jarg8, jstring jarg9) {
   jlong jresult = 0 ;
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
+  java_wxpanel *arg1 = (java_wxpanel *) 0 ;
   int arg2 ;
   std::string arg3 ;
   int arg4 ;
@@ -342,8 +342,7 @@ SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNI
   
   (void)jenv;
   (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
+  arg1 = *(java_wxpanel **)&jarg1; 
   arg2 = (int)jarg2; 
   if(!jarg3) {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
