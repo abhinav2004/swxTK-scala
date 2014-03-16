@@ -42,10 +42,12 @@ def main(args):
 		wxPanel.make_natives()
 		wxFrame.make_natives()
 		wxMenuBar.make_natives()
+		wxDialog.make_natives()
 		wxApp.make_java()
 		wxMenuBar.make_java()
 		wxFrame.make_java()
 		wxPanel.make_java()
+		wxDialog.make_java()
 		wxButton.make_java()
 if __name__ == "__main__":
 	main(sys.argv)
