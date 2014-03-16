@@ -4,7 +4,8 @@ import subprocess
 
 JAVA_HOME = os.environ['JAVA_HOME']
 CXX = "g++"
-CXXOP = " -pipe -c -shared -fPIC `wx-config --cppflags` `wx-config --libs` -L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
+WXWIDGETS_CXXOP = "`wx-config --cppflags` `wx-config --libs` "
+CXXOP = " -pipe -c -shared -fPIC " + WXWIDGETS_CXXOP + "-L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
 SWIG = "swig -c++ -java "
 JAVAC = "javac -d ./build/ "
 
@@ -41,8 +42,8 @@ def make_cpp():
 		print ("Error! Aborting!")
 		sys.exit(1)
 	
-	print ("\n\t" + CXX + " -shared -fPIC `wx-config --cppflags` `wx-config --libs`" + "obj/wxpanel_module_wrap.o obj/java_wxpanel.o -o ./build/natives/libwxpanel.so");
-	cxxproc = os.system(CXX + " -shared -fPIC `wx-config --cppflags` `wx-config --libs`" + "obj/wxpanel_module_wrap.o obj/java_wxpanel.o -o ./build/natives/libwxpanel.so");
+	print ("\n\t" + CXX + " -shared -fPIC " + "obj/wxpanel_module_wrap.o obj/java_wxpanel.o " + WXWIDGETS_CXXOP + "-o ./build/natives/libwxpanel.so");
+	cxxproc = os.system(CXX + " -shared -fPIC " + "obj/wxpanel_module_wrap.o obj/java_wxpanel.o " + WXWIDGETS_CXXOP + "-o ./build/natives/libwxpanel.so");
 	if cxxproc is not 0:
 		print ("Error! Aborting!")
 		sys.exit(1)

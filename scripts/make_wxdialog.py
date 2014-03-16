@@ -4,9 +4,11 @@ import subprocess
 
 JAVA_HOME = os.environ['JAVA_HOME']
 CXX = "g++"
-CXXOP = " -pipe -c -shared -fPIC `wx-config --cppflags` `wx-config --libs` -L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
+WXWIDGETS_CXXOP = "`wx-config --cppflags` `wx-config --libs` "
+CXXOP = " -pipe -c -shared -fPIC " + WXWIDGETS_CXXOP + "-L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
 SWIG = "swig -c++ -java "
 JAVAC = "javac -d ./build/ "
+
 
 def make_all():
 	print ("\n\033[1;37mMaking wxDialog.\033[0m")
@@ -41,8 +43,10 @@ def make_cpp():
 		print ("Error! Aborting!")
 		sys.exit(1)
 	
-	print ("\n\t" + CXX + " -shared -fPIC `wx-config --cppflags` `wx-config --libs`" + "obj/wxdialog_module_wrap.o obj/java_wxdialog.o -o ./build/natives/libwxdialog.so");
-	cxxproc = os.system(CXX + " -shared -fPIC `wx-config --cppflags` `wx-config --libs`" + "obj/wxdialog_module_wrap.o obj/java_wxdialog.o -o ./build/natives/libwxdialog.so");
+	# Do NOT change the sequence of the arguments passed to g++. It may seem to work on your distro but may not work on others. 
+	# The following code works on most of the distros like Ubuntu and Arch Linux.
+	print ("\n\t" + CXX + " -shared -fPIC obj/wxdialog_module_wrap.o obj/java_wxdialog.o " + WXWIDGETS_CXXOP + "-o ./build/natives/libwxdialog.so");
+	cxxproc = os.system(CXX + " -shared -fPIC obj/wxdialog_module_wrap.o obj/java_wxdialog.o " + WXWIDGETS_CXXOP + "-o ./build/natives/libwxdialog.so");
 	if cxxproc is not 0:
 		print ("Error! Aborting!")
 		sys.exit(1)
