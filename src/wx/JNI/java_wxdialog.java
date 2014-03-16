@@ -35,8 +35,8 @@ public class java_wxdialog {
     }
   }
 
-  public java_wxdialog(SWIGTYPE_p_java_wxpanel parent, int id, String title, int x, int y, int width, int height, int style, String name) {
-    this(wxdialog_moduleJNI.new_java_wxdialog(SWIGTYPE_p_java_wxpanel.getCPtr(parent), id, title, x, y, width, height, style, name), true);
+  public java_wxdialog(java_wxpanel parent, int id, String title, int x, int y, int width, int height, int style, String name) {
+    this(wxdialog_moduleJNI.new_java_wxdialog(java_wxpanel.getCPtr(parent), parent, id, title, x, y, width, height, style, name), true);
   }
 
   public void java_ShowModal() {

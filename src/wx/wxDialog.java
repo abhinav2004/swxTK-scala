@@ -54,11 +54,11 @@ public class wxDialog extends java_wxdialog{
 		wxHORIZONTAL,wxVERTICAL, wxBOTH, wxORIENTATION_MASK 
 	}
 	
-	public wxDialog(java_wxpanel parent, int id, String title, Point location, Dimension size, int style, String name) {
+	public wxDialog(wxPanel parent, int id, String title, Point location, Dimension size, int style, String name) {
 		super(parent, id, title, (int) location.getX(), (int) location.getY(), (int) size.getWidth(), (int) size.getHeight(), style, name);
 	}
 	
-	public wxDialog(java_wxpanel parent, int id, String title) {
+	public wxDialog(wxPanel parent, int id, String title) {
 		super(parent, id, title, 0, 0, 400, 400, wxDEFAULT_FRAME_STYLE, "default name");
 	}
 	
@@ -70,7 +70,7 @@ public class wxDialog extends java_wxdialog{
 		this.java_Center(direction.ordinal());
 	}
 	
-	public void show(boolean val) {
-		this.java_Show(val);
+	public void show() {
+		this.java_Show();
 	}
 }

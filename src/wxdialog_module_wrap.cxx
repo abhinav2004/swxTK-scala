@@ -222,112 +222,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxframe(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6, jint jarg7, jint jarg8, jstring jarg9) {
-  jlong jresult = 0 ;
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  int arg2 ;
-  std::string arg3 ;
-  int arg4 ;
-  int arg5 ;
-  int arg6 ;
-  int arg7 ;
-  long arg8 ;
-  std::string arg9 ;
-  java_wxframe *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
-  arg2 = (int)jarg2; 
-  if(!jarg3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
-    return 0;
-  } 
-  const char *arg3_pstr = (const char *)jenv->GetStringUTFChars(jarg3, 0); 
-  if (!arg3_pstr) return 0;
-  (&arg3)->assign(arg3_pstr);
-  jenv->ReleaseStringUTFChars(jarg3, arg3_pstr); 
-  arg4 = (int)jarg4; 
-  arg5 = (int)jarg5; 
-  arg6 = (int)jarg6; 
-  arg7 = (int)jarg7; 
-  arg8 = (long)jarg8; 
-  if(!jarg9) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
-    return 0;
-  } 
-  const char *arg9_pstr = (const char *)jenv->GetStringUTFChars(jarg9, 0); 
-  if (!arg9_pstr) return 0;
-  (&arg9)->assign(arg9_pstr);
-  jenv->ReleaseStringUTFChars(jarg9, arg9_pstr); 
-  result = (java_wxframe *)new java_wxframe(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
-  *(java_wxframe **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_java_1wxframe_1java_1Show(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  bool arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
-  arg2 = jarg2 ? true : false; 
-  (arg1)->java_Show(arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_java_1wxframe_1java_1Center_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
-  (arg1)->java_Center();
-}
-
-
-SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_java_1wxframe_1java_1Center_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  int arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
-  arg2 = (int)jarg2; 
-  (arg1)->java_Center(arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_java_1wxframe_1java_1SetMenuBar(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  java_wxmenubar *arg2 = (java_wxmenubar *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(java_wxframe **)&jarg1; 
-  arg2 = *(java_wxmenubar **)&jarg2; 
-  (arg1)->java_SetMenuBar(arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_wx_JNI_wxdialog_1moduleJNI_delete_1java_1wxframe(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  java_wxframe *arg1 = (java_wxframe *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(java_wxframe **)&jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6, jint jarg7, jint jarg8, jstring jarg9) {
+SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6, jint jarg7, jint jarg8, jstring jarg9) {
   jlong jresult = 0 ;
   java_wxpanel *arg1 = (java_wxpanel *) 0 ;
   int arg2 ;
@@ -342,6 +237,7 @@ SWIGEXPORT jlong JNICALL Java_wx_JNI_wxdialog_1moduleJNI_new_1java_1wxdialog(JNI
   
   (void)jenv;
   (void)jcls;
+  (void)jarg1_;
   arg1 = *(java_wxpanel **)&jarg1; 
   arg2 = (int)jarg2; 
   if(!jarg3) {

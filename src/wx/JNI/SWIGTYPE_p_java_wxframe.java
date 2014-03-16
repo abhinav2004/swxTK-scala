@@ -8,7 +8,19 @@
 
 package wx.JNI;
 
-public class wxpanel_moduleJNI {
-  public final static native long new_java_wxpanel(long jarg1, java_wxframe jarg1_, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, int jarg7, String jarg8);
-  public final static native void delete_java_wxpanel(long jarg1);
+public class SWIGTYPE_p_java_wxframe {
+  private long swigCPtr;
+
+  protected SWIGTYPE_p_java_wxframe(long cPtr, boolean futureUse) {
+    swigCPtr = cPtr;
+  }
+
+  protected SWIGTYPE_p_java_wxframe() {
+    swigCPtr = 0;
+  }
+
+  protected static long getCPtr(SWIGTYPE_p_java_wxframe obj) {
+    return (obj == null) ? 0 : obj.swigCPtr;
+  }
 }
+
