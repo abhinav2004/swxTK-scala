@@ -32,8 +32,9 @@ This project is still in very early stage. For now (dated 6th of March, 2014) on
 <li><b>wxButton</b> [PARTIALLY IMPLEMENTED]</li>
 → Event Handling [DONE]<br /><br />
 <li><b>wxMenuBar, wxMenu, wxMenuItem</b> [WIP]</li>
-→ Event Handling [FIXED, DONE]<br />
-  <br /><br />
+→ Event Handling [DONE]<br /><br />
+<li><b>wxDialog</b> [WIP]</li>
+<br /><br />
 
 
 </ul>
