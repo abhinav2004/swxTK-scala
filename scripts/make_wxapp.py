@@ -7,6 +7,7 @@ CXX = "g++"
 WXWIDGETS_CXXOP = "`wx-config --cppflags` `wx-config --libs` "
 CXXOP = " -pipe -c -shared -fPIC " + WXWIDGETS_CXXOP + "-L./build/natives -I"+JAVA_HOME+"/include/ -I"+JAVA_HOME+"/include/linux/ "
 SWIG = "swig -c++ -java "
+SCALAC = "scalac -d ./build/ "
 JAVAC = "javac -d ./build/ "
 
 def make_all():
@@ -50,9 +51,19 @@ def make_cpp():
 		print ("Error! Aborting!")
 		sys.exit(1)
 def make_java():
-	print ("\n\t\033[1;37m--> Compiling wxApp Java class.\033[0m")
-	print ("\t" + JAVAC + " -cp ./src src/wx/wxApp.java")
-	javaproc = os.system("\t"+JAVAC + " -cp ./src src/wx/wxApp.java")
+	print ("\n\t\033[1;37m--> Compiling wxApp Scala class.\033[0m")
+	print ("\t" + SCALAC + " -cp ./src src/wx/JNI/*.java src/wxApp.scala")
+	javaproc = os.system("\t"+SCALAC + " -cp ./src src/wx/JNI/*.java src/wxApp.scala")
+	if javaproc is not 0:
+		print ("Error! Aborting!")
+		sys.exit(1)
+	print ("\t" + JAVAC + " -cp ./src src/wx/JNI/java_wxapp.java")
+	javaproc = os.system("\t"+JAVAC + " -cp ./src src/wx/JNI/java_wxapp.java")
+	if javaproc is not 0:
+		print ("Error! Aborting!")
+		sys.exit(1)
+	print ("\t" + JAVAC + " -cp ./src src/wx/JNI/wxapp_module.java")
+	javaproc = os.system("\t"+JAVAC + " -cp ./src src/wx/JNI/wxapp_module.java")
 	if javaproc is not 0:
 		print ("Error! Aborting!")
 		sys.exit(1)
