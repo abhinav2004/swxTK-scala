@@ -10,3 +10,8 @@
 	#include "../include/java_wxapp.h"
 %}
 %include "../include/java_wxapp.h"
+%pragma(java) jniclasscode=%{
+	static {
+		System.loadLibrary("wxapp");
+	}
+%}
