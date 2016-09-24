@@ -1,3 +1,5 @@
+<h4>This project is just an experiment, is incomplete and I have no plans of maintaining it due to time constraints.</h4>
+
 <h1>swxTK</h1>
 <p>
 swxTK is simple to use GUI toolkit for Java. It tries to use the same syntax as that of Swing and use the awesome power of native GUI libraries like GTK, MSW (Windows) and Cocoa (Macintosh) provided by one of my favorite projects,<b> wxWidgets</b>.
